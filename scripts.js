@@ -6,6 +6,90 @@ function Character(health, name, klass, stamina, mana) {
   this.mana = mana;
 }
 
+function Human(myName) {
+  Character.call(this);
+  this.health = 100;
+  this.name = myName;
+  this.klass = "Human";
+  this.stamina = 100;
+  this.mana = 100;
+}
+
+Human.prototype = Object.create(Character.prototype);
+Human.prototype.constructor = Human;
+
+function Elf(myName) {
+  Character.call(this);
+  this.health = 75;
+  this.name = myName;
+  this.klass = "Elf";
+  this.stamina = 75;
+  this.mana = 150;
+}
+
+Elf.prototype = Object.create(Character.prototype);
+Elf.prototype.constructor = Elf;
+
+function Dwarf(myName) {
+  Character.call(this);
+  this.health = 125;
+  this.name = myName;
+  this.klass = "Dwarf";
+  this.stamina = 125;
+  this.mana = 50;
+}
+
+Dwarf.prototype = Object.create(Character.prototype);
+Dwarf.prototype.constructor = Dwarf;
+
+function Goblin(myName) {
+  Character.call(this);
+  this.health = 100;
+  this.name = myName;
+  this.klass = "Goblin";
+  this.stamina = 100;
+  this.mana = 100;
+}
+
+Goblin.prototype = Object.create(Character.prototype);
+Goblin.prototype.constructor = Goblin;
+
+function Orc(myName) {
+  Character.call(this);
+  this.health = 200;
+  this.name = myName;
+  this.klass = "Orc";
+  this.stamina = 200;
+  this.mana = 0;
+}
+
+Orc.prototype = Object.create(Character.prototype);
+Orc.prototype.constructor = Orc;
+
+function Pixie(myName) {
+  Character.call(this);
+  this.health = 50;
+  this.name = myName;
+  this.klass = "Pixie";
+  this.stamina = 50;
+  this.mana = 200;
+}
+
+Pixie.prototype = Object.create(Character.prototype);
+Pixie.prototype.constructor = Pixie;
+
+function Undead(myName) {
+  Character.call(this);
+  this.health = 100;
+  this.name = myName;
+  this.klass = "Undead";
+  this.stamina = 100;
+  this.mana = 100;
+}
+
+Undead.prototype = Object.create(Character.prototype);
+Undead.prototype.constructor = Undead;
+
 var healthSubtraction;
 
 Character.prototype.staminaAttack = function (attacker, defender) {
@@ -32,8 +116,8 @@ Character.prototype.staminaAttack = function (attacker, defender) {
     attacker.stamina += 10;
   }
 
-  console.warn("Defender Health: " + defender.health + "\nDefender Stamina: " + defender.stamina);
-  console.warn("Attacker Health: " + attacker.health + "\nAttacker Stamina: " + attacker.stamina);
+  console.warn(defender.name + "'s Health: " + defender.health + "\n" + defender.name + "'s Stamina: " + defender.stamina);
+  console.warn(attacker.name + "'s Health: " + attacker.health + "\n" + attacker.name + "'s Stamina: " + attacker.stamina);
   if (attacker.health <= 0 || defender.health <= 0) {
     return attacker.health <= 0 ? "Attacker is dead" : "Defender is dead";
   }
@@ -63,12 +147,12 @@ Character.prototype.manaAttack = function (attacker, defender) {
     attacker.mana += 10;
   }
 
-  console.warn("Defender Health: " + defender.health + "\nDefender Mana: " + defender.mana);
-  console.warn("Attacker Health: " + attacker.health + "\nAttacker Mana: " + attacker.mana);
+  console.warn(defender.name + "'s Health: " + defender.health + "\n" + defender.name + "'s Mana: " + defender.mana);
+  console.warn(attacker.name + "'s Health: " + attacker.health + "\n" + attacker.name + "'s Mana: " + attacker.mana);
   if (attacker.health <= 0 || defender.health <= 0) {
     return attacker.health <= 0 ? "Attacker is dead" : "Defender is dead";
   }
 }
 
-var player1 = new Character(100, "Random", "Random", 100, 100);
-var enemy1 = new Character(50, "Random2", "Random2", 50, 50);
+var player = new Human("Rolt Rudge");
+var enemy = new Undead("Blightface");
