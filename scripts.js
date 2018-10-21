@@ -15,8 +15,8 @@ function Human(myName) {
   this.mana = 100;
 }
 
-Human.prototype = Object.create(Character.prototype);
-Human.prototype.constructor = Human;
+Human.prototype = Object.create(Character.prototype); // Inheritence
+Human.prototype.constructor = Human; // Helps in doing subclass specific actions.
 
 function Elf(myName) {
   Character.call(this);
