@@ -154,5 +154,7 @@ Character.prototype.manaAttack = function (attacker, defender) {
   }
 }
 
-var player = new Human("Rolt Rudge");
-var enemy = new Undead("Blightface");
+module.exports = {
+  Human,
+  Undead
+};
