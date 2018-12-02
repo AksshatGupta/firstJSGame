@@ -156,5 +156,10 @@ Character.prototype.manaAttack = function (attacker, defender) {
 
 module.exports = {
   Human,
+  Elf,
+  Dwarf,
+  Goblin,
+  Orc,
+  Pixie,
   Undead
 };
