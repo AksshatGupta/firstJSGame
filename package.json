@@ -9,6 +9,6 @@
   "author": "AksshatGupta <aksshatyashgupta@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "enquirer": "^2.0.7"
+    "inquirer": "^6.2.1"
   }
 }
